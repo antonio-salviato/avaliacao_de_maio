@@ -1,23 +1,26 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: darkslategrey;
+  background-image: linear-gradient(to right,  rgb(16, 56, 56) , rgb(13, 94, 3));
+  /* background-color: rgb(16, 56, 56); */
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+
 #container {
   display: flex;
-  border-radius: 5%;
-  width: 800px;
+  flex: 1;
+  border-radius: 20px;
+  background-color: #4b2400;
+  width: 900px;
   height: 300px;
   justify-content: center;
-  background-color: rgb(49, 49, 49);
-  padding: 20px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  padding: 0px;
+  margin-left: 15%;
+  margin-top: 10%
+  
+
 }
 
 #email {
@@ -32,6 +35,15 @@ body {
   height: 40px;
   border-radius: 15px;
 }
+
+#confirmPassword {
+  width: 100%;
+  height: 40px;
+  border-radius: 15px;
+}
+
+
+
 
 .bt {
   border: 1px solid #25692a;
@@ -131,4 +143,76 @@ body {
   width: 1000px;
   padding-top: 50px;
   justify-content: center;
+}
+#botaoAtualizarRecados {
+  display: none;
+}
+
+
+table, th, td {  
+  border: 1px solid grey;  
+  border-collapse: collapse;  
+}  
+
+th, td {  
+  padding: 10px; 
+  width: 200px;
+  text-align: center;
+  color: white;
+}  
+
+table th { 
+  justify-content:c enter; 
+  color: white;
+  font-size: medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;  
+  background-color: rgb(5, 43, 75);  
+}  
+
+tbody th{
+  opacity: .8;
+  color: white;
+}
+
+img{
+  margin: 0 10px 0 10px;
+}
+
+input[type=submit]{
+  all: unset;
+  background-color: rgb(57, 148, 69);
+  color: white;
+  border: none;
+  margin: 5px;
+  padding: 5px;
+}
+
+div#msg-erro{
+  color: red
+}
+
+#msg {
+  margin-left: 0px;
+  width: 29%;
+  height: 20px;
+}
+
+ #descricao {
+   margin-left: 9px;
+   width: 29%;
+   height: 20px;
+  
+   }
+
+#salvar {
+  margin-left: 27%;
+   width: 200px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgb(117, 7, 7);
+  margin-top: 10px;
+  cursor: pointer;
+}
+#salvar:hover {
+  background: linear-gradient(to bottom, #f3290e 15%, #e4da4c 100%);
 }

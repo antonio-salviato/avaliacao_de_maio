@@ -1,6 +1,5 @@
 const login = document.querySelector("#newAccount");
 
-
 const recuperarLocalStorage = () => {
   const dadosUser = JSON.parse(localStorage.getItem("dadosConta") || "[]");
   return dadosUser;
@@ -28,19 +27,19 @@ function salvar(event) {
 
   if (dadosPassword !== dadosConfirmPassword) {
     alert("Senhas não conferem.");
+    return;
   }
+
   const dadosUser = recuperarLocalStorage();
 
+  atualizarStorage(dadosUser);
+  alert("usuário adicionado com sucesso");
   dadosUser.push({
     email: dadosEmail,
     password: dadosPassword,
   });
-  atualizarStorage(dadosUser);
-  alert("usuário adicionado com sucesso");
 
   location.href = "./index.html";
 }
 
 login.addEventListener("submit", salvar);
-
-

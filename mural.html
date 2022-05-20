@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mural de Recados - Login</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body id="background" style="margin-left: 15%;">
+    <h2 style="color: white; margin-left: 25%">Cadastro de mensagens</h2>
+    <br>
+
+    <div class="form">
+      <form id="mural" style="color: white">
+        <label for="descricao">Descrição: </label>
+             <input
+          type="text"
+          id="descricao"
+          name="descricao"
+          maxlength="30"
+          placeholder="Digite a Descrição"
+          required
+        />
+<br>
+<br>
+        <span class="msgem">
+
+            <label for="msg">Mensagem: </label>
+            
+            <input id="msg" name="msg" maxlength="80" placeholder="Digite até 80 caracteres" required> </input>
+        </span>
+           <br>
+            <br>
+            <input type="submit" id="salvar" name="salvar" value="Salvar" />
+        </form>
+    </div>
+
+    <br>
+
+    <table>
+      <caption>
+        <h3 style="color: white">MURAL</h3>
+      </caption>
+
+      <section id="table">
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>DESCRIÇÃO</th>
+                  <th>MENSAGEM</th>
+                  <th>AÇÃO</th>
+                </tr>
+            </thead>
+            
+            <tbody id="tbody"></tbody>
+        </table>
+    </section>
+        
+        <script src="./js/mural.js"></script>
+    </body>
+    </html>
+    
