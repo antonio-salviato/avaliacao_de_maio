@@ -1,6 +1,6 @@
 const login = document.getElementById("formularioLogin");
 
-dadosUser = JSON.parse(localStorage.getItem("dadosConta"));
+const dadosUser = JSON.parse(localStorage.getItem("dadosConta"));
 
 function fazerlogin(event) {
   event.preventDefault();
@@ -10,11 +10,11 @@ function fazerlogin(event) {
   const email = login.email.value;
   const password = login.password.value;
 
-  const User = dadosUser.find((usuario) => {
+  const user = dadosUser.find((usuario) => {
     return usuario.email === email && usuario.password === password;
   });
 
-  if (!User) {
+  if (!user) {
     alert("E-mail ou Senha incorretos");
     formularioLogin.reset();
     return;

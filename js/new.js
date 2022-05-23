@@ -11,6 +11,7 @@ const atualizarStorage = (dadosConta) => {
 
 function salvar(event) {
   event.preventDefault();
+
   const dadosEmail = login.email.value;
   const dadosPassword = login.password.value;
   const dadosConfirmPassword = login.confirmPassword.value;
@@ -32,13 +33,17 @@ function salvar(event) {
 
   const dadosUser = recuperarLocalStorage();
 
-  atualizarStorage(dadosUser);
-  alert("usuário adicionado com sucesso");
+  
+  
   dadosUser.push({
     email: dadosEmail,
     password: dadosPassword,
   });
+  atualizarStorage(dadosUser);
+  alert("usuário adicionado com sucesso");
+  
 
+  
   location.href = "./index.html";
 }
 
