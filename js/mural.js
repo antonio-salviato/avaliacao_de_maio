@@ -20,7 +20,7 @@ const salvarMsgem = (event) => {
   // recupera a lista de produto no localStorage
   const msgem = recuperarLocalStorage();
   if (botaoEditar == true) {
-    alert("Edição");
+    alert("Mensagem alterada com sucesso");
     msgem[editIndex].descricao = descricao;
     msgem[editIndex].msg = msg;
     botaoEditar = false;
@@ -33,7 +33,7 @@ const salvarMsgem = (event) => {
   }
 
   atualizarLocalStorage(msgem);
-  alert("Produto adicionado com sucesso");
+  alert("Mensagem adicionada!");
   // atualiza a tabela com o novo produto adicionado
   preencherTabela();
   // limpa os inputs
