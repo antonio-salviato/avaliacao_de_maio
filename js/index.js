@@ -1,5 +1,4 @@
 const login = document.getElementById("formularioLogin");
-
 const dadosUser = JSON.parse(localStorage.getItem("dadosConta"));
 
 function fazerlogin(event) {
@@ -9,11 +8,9 @@ function fazerlogin(event) {
   }
   const email = login.email.value;
   const password = login.password.value;
-
   const user = dadosUser.find((usuario) => {
     return usuario.email === email && usuario.password === password;
   });
-
   if (!user) {
     alert("E-mail ou Senha incorretos");
     formularioLogin.reset();
@@ -22,4 +19,5 @@ function fazerlogin(event) {
     location.href = "./mural.html";
   }
 }
+
 login.addEventListener("submit", fazerlogin);

@@ -1,6 +1,5 @@
 const form = document.querySelector("#mural");
 const corpoTabela = document.querySelector("#tbody");
-
 let botaoEditar = false;
 let editIndex = 0;
 
@@ -12,12 +11,10 @@ const atualizarLocalStorage = (msgem) => {
   localStorage.setItem("dadosMsg", JSON.stringify(msgem));
 };
 const salvarMsgem = (event) => {
-  // remove o comportamento padrão do subtmit
   event.preventDefault();
-  // pega as informações dos inputs no html e passa para as variaveis
   const descricao = form.descricao.value;
   const msg = form.msg.value;
-  // recupera a lista de produto no localStorage
+
   const msgem = recuperarLocalStorage();
   if (botaoEditar == true) {
     alert("Mensagem alterada com sucesso");
@@ -34,19 +31,15 @@ const salvarMsgem = (event) => {
 
   atualizarLocalStorage(msgem);
   alert("Mensagem adicionada!");
-  // atualiza a tabela com o novo produto adicionado
+
   preencherTabela();
-  // limpa os inputs
+
   form.reset();
 };
 const preencherTabela = () => {
-  // recupera a lista de produtos do localStorage
   const msgem = recuperarLocalStorage();
-  // limpa a tabela no html
   corpoTabela.innerHTML = "";
-  // percorre a lista de produtos
   for (const message of msgem) {
-    // para cada produto vamos criar uma linha nova no corpo da table
     corpoTabela.innerHTML += `
         <tr>
             <td>${message.id}</td>
@@ -73,27 +66,18 @@ const editar = (id) => {
 
 const removeMsg = (id) => {
   if (confirm("Você tem certeza que deseja apagar esse recado?"));
-
   const msgem = recuperarLocalStorage();
-  // procura o indice do produto na lista conforme o identificado passado
   const indiceMsg = msgem.findIndex((message) => message.id === id);
-  // quando o findIndex não encontra ele retorna -1
-  // então por isso é verificado se o indice é menor que o 0
   if (indiceMsg < 0) return;
-  // remove o produto da lista
   msgem.splice(indiceMsg, 1);
-  // atualiza o localStorage
   atualizarLocalStorage(msgem);
   alert("Mensagem removida com sucesso");
-  // atualiza a tabela no html
   preencherTabela();
 };
+
 const definirID = () => {
-  // guardar o maior ID encontrado na lista de produtos
   let max = 0;
-  // recupera a lista de produtos do localStorage
   const msgem = recuperarLocalStorage();
-  // percorre a lista de produtos para atualizar e obter o maior
   msgem.forEach((message) => {
     if (message.id > max) {
       max = message.id;
@@ -103,6 +87,4 @@ const definirID = () => {
 };
 
 form.addEventListener("submit", salvarMsgem);
-// assim que o conteúdo html é carregado é chamado a função para
-// preencher a tabela com os produtos cadastrados
 document.addEventListener("DOMContentLoaded", preencherTabela);
